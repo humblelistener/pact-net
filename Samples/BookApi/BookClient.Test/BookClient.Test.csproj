@@ -49,7 +49,7 @@
       <Project>{6725A42E-ED7E-43F4-864D-BA53D8FBB347}</Project>
       <Name>BookClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PactNet\PactNet.csproj">
+    <ProjectReference Include="..\..\..\PactNet\PactNet.csproj">
       <Project>{7024B146-2CB2-4DE2-B079-58CF9C44640B}</Project>
       <Name>PactNet</Name>
     </ProjectReference>
