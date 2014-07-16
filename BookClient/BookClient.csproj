@@ -7,8 +7,8 @@
     <ProjectGuid>{6725A42E-ED7E-43F4-864D-BA53D8FBB347}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookApiClient</RootNamespace>
-    <AssemblyName>BookApiClient</AssemblyName>
+    <RootNamespace>BookClient</RootNamespace>
+    <AssemblyName>BookClient</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Reader.cs" />
+    <Compile Include="ApiClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

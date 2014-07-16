@@ -5,13 +5,13 @@ using System.Net.Http;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
-namespace BookApiClient
+namespace BookClient
 {
-    public class BookClient
+    public class ApiClient
     {
         public string BaseUri { get; set; }
 
-        public BookClient(string baseUri = null)
+        public ApiClient(string baseUri = null)
         {
             BaseUri = baseUri ?? "http://book.readify.com/api";
         }
