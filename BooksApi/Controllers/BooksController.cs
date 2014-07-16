@@ -18,8 +18,8 @@ namespace BooksApi.Controllers
         {
             return new List<Book>
             {
-                new Book {ISBN = "asdfads", Author = "k", Name = "m"},
-                new Book {ISBN = "asf", Author = "k", Name = "m"}
+                new Book {ISBN = "abcde", Author = "k", Name = "m"},
+                new Book {ISBN = "efghi", Author = "k", Name = "m"}
             };
         }
 

@@ -22,26 +22,27 @@ namespace BookClient
             NullValueHandling = NullValueHandling.Ignore
         };
 
-        public IEnumerable<dynamic> GetBook()
+        public IEnumerable<dynamic> GetBooks()
         {
-            var client = new HttpClient {BaseAddress = new Uri(BaseUri)};
-
-            var request = new HttpRequestMessage(HttpMethod.Get, "/books");
-            request.Headers.Add("Accept", "application/json");
-
-            var response = client.SendAsync(request);
-
-            var content = response.Result.Content.ReadAsStringAsync().Result;
-            var status = response.Result.StatusCode;
-
-            if (status == HttpStatusCode.OK)
+            using (var client = new HttpClient {BaseAddress = new Uri(BaseUri)})
             {
-                return !String.IsNullOrEmpty(content) ?
-                    JsonConvert.DeserializeObject<IEnumerable<dynamic>>(content, _jsonSettings)
-                    : new List<dynamic>();
-            }
+                var request = new HttpRequestMessage(HttpMethod.Get, "/books");
+                request.Headers.Add("Accept", "application/json");
 
-            throw new Exception("Server responded with a non 200 status code");
+                var response = client.SendAsync(request);
+
+                var content = response.Result.Content.ReadAsStringAsync().Result;
+                var status = response.Result.StatusCode;
+
+                if (status == HttpStatusCode.OK)
+                {
+                    return !String.IsNullOrEmpty(content) ?
+                        JsonConvert.DeserializeObject<IEnumerable<dynamic>>(content, _jsonSettings)
+                        : new List<dynamic>();
+                }
+
+                throw new Exception("Server responded with a non 200 status code");
+            }
         }
     }
 }
